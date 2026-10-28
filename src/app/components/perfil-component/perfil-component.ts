@@ -18,8 +18,8 @@ export class PerfilComponent implements OnInit {
   constructor(private _activateRoute: ActivatedRoute,private _cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    this._activateRoute.params.subscribe((params: Params)=>{
 
-    })
-  }
+  
+  
+}
 }
