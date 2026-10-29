@@ -1,1 +1,9 @@
-<h1>Perfil del usuario</h1>
+<h1>Perfil</h1>
+@if (perfil) {
+  <ul class="list-group">
+    <li>Apellido: {{ perfil.apellido }}</li>
+    <li>Oficio: {{ perfil.oficio }}</li>
+    <li>Salario: {{ perfil.salario }}</li>
+    <li>Director: {{ perfil.director }}</li>
+  </ul>
+}

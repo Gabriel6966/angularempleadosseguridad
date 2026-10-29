@@ -26,10 +26,15 @@ export class EmpleadosService{
     //}
 
     getSubordinados(): Observable<Empleado[]>{
-        let token = localStorage.getItem("token");
-        let headers = new HttpHeaders().set("Authorization", "Bearer " + token);
+        let response = localStorage.getItem("TOKEN");
+        let headers = new HttpHeaders().set("Authorization", "Bearer " + response);
         return this._http.get<Empleado[]>(this.url + "api/Empleados/Subordinados", {headers: headers});
     }
 
+    getPerfilEmpleado(): Observable<Empleado>{
+        let response = localStorage.getItem("TOKEN");
+        let headers = new HttpHeaders().set("Authorization", "Bearer " + response);
+        return this._http.get<Empleado>(this.url + "api/Empleados/perfilempleado", {headers: headers});
+    }
 
 }

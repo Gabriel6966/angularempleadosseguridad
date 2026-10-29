@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       password: this.cajacontrasena.nativeElement.value
     }).subscribe((data) => {
       console.log(data);
-      localStorage.setItem("token", data.token);
+      localStorage.setItem("TOKEN", data.response);
       this._router.navigate(["/perfil"]);
     }, (error) => {
       console.log(error);

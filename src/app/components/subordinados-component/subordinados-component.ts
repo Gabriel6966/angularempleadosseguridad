@@ -13,7 +13,7 @@ export class SubordinadosComponent implements OnInit {
   subordinados: any[] = [];
 
   constructor(
-    private _cdr:ChangeDetectorRef, private _service:EmpleadosService 
+    private _cdr:ChangeDetectorRef, private _service:EmpleadosService
   ) { }
 
   ngOnInit(): void {
@@ -21,6 +21,7 @@ export class SubordinadosComponent implements OnInit {
       next: (data) => {
         console.log(data);
         this.subordinados = data;
+        this._cdr.detectChanges();
       },
       error: (error) => {
         console.log(error);

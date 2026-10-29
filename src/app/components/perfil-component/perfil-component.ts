@@ -12,17 +12,22 @@ import { EmpleadosService } from '../../services/service.empleados';
 export class PerfilComponent implements OnInit {
   public perfil!: Empleado;
 
-
-
-
-
-  constructor(private _activateRoute: ActivatedRoute,private _cdr: ChangeDetectorRef, private _service: EmpleadosService) {
-
-  }
+  constructor(
+    private _activateRoute: ActivatedRoute,
+    private _cdr: ChangeDetectorRef,
+    private _service: EmpleadosService,
+  ) {}
 
   ngOnInit(): void {
-
-
-
-}
+    this._service.getPerfilEmpleado().subscribe(
+      (data) => {
+        this.perfil = data;
+        console.log(this.perfil);
+        this._cdr.detectChanges();
+      },
+      (error) => {
+        console.log(error);
+      },
+    );
+  }
 }
