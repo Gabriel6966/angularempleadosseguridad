@@ -18,9 +18,6 @@ export class SubordinadosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    if(localStorage.getItem("TOKEN") == null){
-      this._route.navigate(['/login']);
-    }else{
     this._service.getSubordinados().subscribe({
       next: (data) => {
         console.log(data);
@@ -33,4 +30,4 @@ export class SubordinadosComponent implements OnInit {
     });
   }
 }
-}
+

@@ -19,19 +19,15 @@ export class PerfilComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    if (localStorage.getItem('TOKEN') == null) {
-      this._route.navigate(['/login']);
-    } else {
-      this._service.getPerfilEmpleado().subscribe(
-        (data) => {
-          this.perfil = data;
-          console.log(this.perfil);
-          this._cdr.detectChanges();
-        },
-        (error) => {
-          console.log(error);
-        },
-      );
-    }
+    this._service.getPerfilEmpleado().subscribe(
+      (data) => {
+        this.perfil = data;
+        console.log(this.perfil);
+        this._cdr.detectChanges();
+      },
+      (error) => {
+        console.log(error);
+      },
+    );
   }
 }
