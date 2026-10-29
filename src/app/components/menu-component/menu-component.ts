@@ -1,4 +1,5 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { ServiceSignal } from '../../services/service.signal';
 
 @Component({
   selector: 'app-menu-component',
@@ -10,7 +11,11 @@ export class MenuComponent {
 
 
 
+
   constructor(private _cdr: ChangeDetectorRef) { }
+
+  private _ServiceSignal : ServiceSignal= inject(ServiceSignal);
+  public contador = this._ServiceSignal.contador;
 
 
   logOutEmpleado(): void{
