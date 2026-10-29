@@ -19,23 +19,19 @@ export class LoginComponent implements OnInit {
 
   constructor(private _cdr: ChangeDetectorRef,
     private _service: EmpleadosService,
-    private _activateRoute: ActivatedRoute,
     private _router: Router) { }
 
 
   login() {
-    this._service.login({
+    this._service.loginEmpleado({
       userName: this.cajauser.nativeElement.value,
       password: this.cajacontrasena.nativeElement.value
-    }).subscribe({
-      next: (data) => {
-        console.log(data);
-        localStorage.setItem("token", data.token);
-        this._router.navigate(["/perfil"]);
-      },
-      error: (error) => {
-        console.log(error);
-      }
+    }).subscribe((data) => {
+      console.log(data);
+      localStorage.setItem("token", data.token);
+      this._router.navigate(["/perfil"]);
+    }, (error) => {
+      console.log(error);
     });
   }
 

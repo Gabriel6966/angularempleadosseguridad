@@ -1,1 +1,24 @@
-<p>subordinados-component works!</p>
+<h1>Subordinados</h1>
+@for(sub of subordinados; track sub){
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Apellido</th>
+        <th>Oficio</th>
+        <th>Salario</th>
+        <th>Director</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{sub.idEmpleado}}</td>
+        <td>{{sub.apellido}}</td>
+        <td>{{sub.oficio}}</td>
+        <td>{{sub.salario}}</td>
+        <td>{{sub.director}}</td>
+      </tr>
+    </tbody>
+  </table>
+}
+

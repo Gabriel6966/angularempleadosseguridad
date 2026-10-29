@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Empleado } from '../../models/empleados';
 import { ActivatedRoute } from '@angular/router';
+import { EmpleadosService } from '../../services/service.empleados';
 
 @Component({
   selector: 'app-perfil-component',
@@ -15,11 +16,13 @@ export class PerfilComponent implements OnInit {
 
 
 
-  constructor(private _activateRoute: ActivatedRoute,private _cdr: ChangeDetectorRef) { }
+  constructor(private _activateRoute: ActivatedRoute,private _cdr: ChangeDetectorRef, private _service: EmpleadosService) {
+
+  }
 
   ngOnInit(): void {
 
-  
-  
+
+
 }
 }
